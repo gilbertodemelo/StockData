@@ -5,10 +5,6 @@ PATH = 'stock_list.csv'
 
 def main():
 
-    # Extract data from the CSV file
-    # symbol_list = load_symbols(PATH)
-    # print(symbol_list)
-
     # Extract data from API
     symbol = 'GNK'
     stock_data = load_stock_data(symbol)
