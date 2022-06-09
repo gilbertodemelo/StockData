@@ -45,7 +45,8 @@ class Stock:
         pass
 
     def get_number_shares_outstanding(self) -> int:
-        pass
+        """Get the number of shares outstanding."""
+        return int(self.balance_sheets['quarterlyReports'][0]['commonStockSharesOutstanding'])
 
     def get_year_eps(self) -> float:
         pass
