@@ -30,19 +30,21 @@ class Stock:
 
         return float(self.balance_sheets['quarterlyReports'][0]['totalCurrentAssets']) - goodwill - intangible_assets
 
-    # def get_noncash_tangible_assets(self) -> float:
-    #     """Get the total non-cash tangible assets.
-    #
-    #     The function will get amounts for both current and
-    #     non-current assets, minus intangible ones.
-    #     """
-        # non_cash_current_assets = self.get_noncash_current_assets()
+    def get_noncash_tangible_assets(self) -> float:
+        """Get the total non-cash tangible assets.
+
+        The function will get amounts for both current and
+        non-current assets, minus intangible ones.
+        """
+        non_cash_current_assets = self.get_noncash_current_assets()
+        non_current_assets = self.balance_sheets['quarterlyReports'][0]['totalNonCurrentAssets']
+        return float(non_current_assets + non_cash_current_assets)
 
     def get_current_liabilities(self) -> float:
-        pass
+        return float(self.balance_sheets['quarterlyReports'][0]['totalCurrentLiabilities'])
 
     def get_total_liabilities(self) -> float:
-        pass
+        return float(self.balance_sheets['quarterlyReports'][0]['totalLiabilities'])
 
     def get_number_shares_outstanding(self) -> int:
         """Get the number of shares outstanding."""
